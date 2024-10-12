@@ -1,2 +1,8 @@
-# Data_Structures_and_Algorithms
-Programs that I made to learn the basic data structures and algorithms using C programming language.
+# Data Structures
+Includes:
+1.##Array
+2.##Singly Linkedlist
+#Algorithms
+Includes:
+1.##Linear Search
+2.##Binary Search
