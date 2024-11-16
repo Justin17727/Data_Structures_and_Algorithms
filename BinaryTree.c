@@ -157,21 +157,16 @@ void preorderTraversal(node* root){
     preorderTraversal(root->right);
 }
 void levelOrderTraversal(node* root){
-    // Create a queue for level order traversal
     node** queue = (node**)malloc(100 * sizeof(node*));
     int front = 0;
     int rear = 0;
-    // Enqueue the root node
     queue[rear++] = root;
-    // Iterate through the tree using level order traversal
     while (front < rear) {
         node* tempNode = queue[front++];
         printf("%d ", tempNode->val);
-        // Enqueue the left child if it exists
         if (tempNode->left != NULL) {
             queue[rear++] = tempNode->left;
         }
-        // Enqueue the right child if it exists
         if (tempNode->right != NULL) {
             queue[rear++] = tempNode->right;
         }
