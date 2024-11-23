@@ -157,6 +157,9 @@ void preorderTraversal(node* root){
     preorderTraversal(root->right);
 }
 void levelOrderTraversal(node* root){
+    if(root == NULL){
+        return;
+    }
     node** queue = (node**)malloc(100 * sizeof(node*));
     int front = 0;
     int rear = 0;
