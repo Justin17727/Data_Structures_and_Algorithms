@@ -35,25 +35,16 @@ void makeMaxHeap(int* arr, int size){
     }
 }
 void maxHeapify(int* arr, int size, int k){
-    //check for this node/index
-    //arr[k] < arr[2 * k + 1] || arr[k] < arr[2 * k + 2]
-    while(2 * k + 1 < size){//if child node exists
-        int temp = arr[k];
-        if(2 * k + 2 == size){//if no right child
-            if(arr[k] < arr[2 * k + 1]){
-                arr[k] = arr[2 * k + 1];
-                arr[2 * k + 1] = temp;
-                return;
-            }
+    while(2 * k + 1 < size){
+        int b = 2 * k + 1;
+        if(2 * k + 2 < size && arr[2 * k + 2] > arr[b]){
+            b = 2 * k + 2;
         }
-        int b = (arr[2 * k + 1] >= arr[2 * k + 2]) ? 2 * k + 1 : 2 * k + 2;//which child node is bigger
-        printf("Checking with this node: %d\tSize: %d\t", b, size);
-        if(arr[k] >= arr[b]){//is the child smaller than node
+        if(arr[k] >= arr[b]){
             return;
         }
-        printf("Prev: %d", arr[k]);
+        int temp = arr[k];
         arr[k] = arr[b];
-        printf("New: %d\n", arr[k]);
         arr[b] = temp;
         k = b;
     }
