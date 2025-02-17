@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-int binarySearch(int* arr, int key, int size);
+int linearSearch(int* arr, int key, int size);
 int compare(const void* a, const void* b);
 int main(){
     int n, b;
@@ -8,27 +8,19 @@ int main(){
     scanf("%d", &n);
     int a[n];
     for(int i = 0; i < n; i++){
-        printf("Enter element %d: ", i+1);
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &a[i]);
     }
     qsort(a, n, sizeof(int), compare);
     printf("Enter element to be searched: ");
     scanf("%d", &b);
-    int index = binarySearch(a, b, n);
+    int index = linearSearch(a, b, n);
     index != -1 ? printf("Element found at index %d", index) : printf("Element not found");
 }
-int binarySearch(int* arr, int key, int size){
-    int low = 0, high = size - 1, mid;
-    while(low <= high){
-        mid = (low + high) / 2;
-        if(arr[mid] == key){
-            return mid;
-        }
-        else if(arr[mid] < key){
-            low = mid + 1;
-        }
-        else{
-            high = mid - 1;
+int linearSearch(int* arr, int key, int size){
+    for(int i = 0; i < size; i++){
+        if(arr[i] == key){
+            return i;
         }
     }
     return -1;
@@ -36,5 +28,5 @@ int binarySearch(int* arr, int key, int size){
 int compare(const void* a, const void* b){
     int* x = (int*)a;
     int* y = (int*)b;
-    return *x - *y;
+    return *x-*y;
 }
