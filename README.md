@@ -14,3 +14,4 @@ Includes:
 2. [Binary Search](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearch.c)
 3. [Insertion Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/InsertionSort.c)
 4. [Heap Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/HeapSort.c)
+5. [Bubble Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BubbleSort.c)
