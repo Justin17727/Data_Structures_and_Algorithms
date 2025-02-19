@@ -15,3 +15,4 @@ Includes:
 3. [Insertion Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/InsertionSort.c)
 4. [Heap Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/HeapSort.c)
 5. [Bubble Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BubbleSort.c)
+6. [Selection Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/SelectionSort.c)
