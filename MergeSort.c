@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 int* merge(int* arr1, int arr1Size, int* arr2, int arr2Size);
 void mergeSort(int* arr, int size);
 int main(){
@@ -42,4 +43,14 @@ int* merge(int* arr1, int arr1Size, int* arr2, int arr2Size){
     return arr;
 }
 void mergeSort(int* arr, int size){
+    if(size == 1){
+        return;
+    }
+    int* left = calloc((size + 1) / 2, sizeof(int));
+    memcpy(left, arr, (size + 1) / 2);
+    int* right = calloc((size + 1) / 2, sizeof(int));
+    memcpy(right, arr + ((size + 1) / 2), (size + 1) / 2);
+    mergeSort(left, (size + 1) / 2);
+    mergeSort(right, (size + 1) / 2);
+    merge(left, (size + 1) / 2, right, (size + 1) / 2);
 }
