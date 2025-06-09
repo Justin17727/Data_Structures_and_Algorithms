@@ -8,7 +8,7 @@ int main(){
     scanf("%d", &n);
     int a[n];
     for(int i = 0; i < n; i++){
-        printf("Enter element %d: ", i+1);
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &a[i]);
     }
     qsort(a, n, sizeof(int), compare);
@@ -36,5 +36,11 @@ int binarySearch(int* arr, int key, int size){
 int compare(const void* a, const void* b){
     int* x = (int*)a;
     int* y = (int*)b;
-    return *x - *y;
+    if(*x < *y){
+        return -1;
+    }
+    if(*x > *y){
+        return 1;
+    }
+    return 0;
 }

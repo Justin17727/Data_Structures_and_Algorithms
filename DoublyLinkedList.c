@@ -39,7 +39,7 @@ int main(){
                 scanf("%d", &data);
                 printf("Enter the index to be inserted at: ");
                 scanf("%d", &index);
-                if(index>size || index<0){
+                if(index > size || index < 0){
                     printf("Enter proper index!");
                 }
                 else{
@@ -171,7 +171,7 @@ node* deleteBetween(node* head, int index, int* size){
     if(index == 0){
         return deleteFirst(head, size);
     }
-    if(index == *size-1){
+    if(index == (*size) - 1){
         return deleteLast(head, size);
     }
     node *ptr = head, *ptr2 = NULL;

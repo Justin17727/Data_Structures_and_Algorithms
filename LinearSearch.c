@@ -28,5 +28,11 @@ int linearSearch(int* arr, int key, int size){
 int compare(const void* a, const void* b){
     int* x = (int*)a;
     int* y = (int*)b;
-    return *x-*y;
+    if(*x < *y){
+        return -1;
+    }
+    if(*x > *y){
+        return 1;
+    }
+    return 0;
 }

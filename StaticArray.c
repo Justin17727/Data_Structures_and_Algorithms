@@ -6,7 +6,7 @@ void insert_element(int data, int pos, int size);
 void delete_element(int pos, int size);
 void display(int size);
 int main(){
-    int choice, size=0, val, index;
+    int choice, size = 0, val, index;
     while(1){
         printf("Enter 1 to insert an element at any position in array.\n");
         printf("Enter 2 to delete an element from a position in array.\n");
@@ -24,7 +24,7 @@ int main(){
                     scanf("%d", &val);
                     printf("Enter the position at which the element should be inserted: ");
                     scanf("%d", &index);
-                    if(index>size || index<0){
+                    if(index > size || index < 0){
                         printf("Enter proper position!");
                     }
                     else{
@@ -41,7 +41,7 @@ int main(){
                 else{
                     printf("Enter the element's position to be deleted: ");
                     scanf("%d", &index);
-                    if(index >= size || index<0){
+                    if(index >= size || index < 0){
                         printf("Enter proper position!");
                     }
                     else{
@@ -63,18 +63,18 @@ int main(){
     }
 }
 void insert_element(int data, int pos, int size){
-    for(int i=size; i>pos; i--){
-        arr[i]=arr[i-1];
+    for(int i = size; i > pos; i--){
+        arr[i] = arr[i - 1];
     }
-    arr[pos]=data;
+    arr[pos] = data;
 }
 void delete_element(int pos, int size){
-    for(int i=pos; i<size-1; i++){
-        arr[i]=arr[i+1];
+    for(int i = pos; i < size - 1; i++){
+        arr[i] = arr[i + 1];
     }
 }
 void display(int size){
-    for(int i=0; i<size; i++){
+    for(int i = 0; i < size; i++){
         printf("%d\t", arr[i]);
     }
 }

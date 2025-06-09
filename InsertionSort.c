@@ -5,23 +5,23 @@ int main(){
     printf("Enter the number of elements to be sorted: ");
     scanf("%d", &n);
     int arr[n];
-    for(int i=0; i<n; i++){
-        printf("Enter element %d: ", i+1);
+    for(int i = 0; i < n; i++){
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
     insertionSort(arr, n);
     printf("Sorted array:\n");
-    for(int i=0; i<n; i++){
+    for(int i = 0; i < n; i++){
         printf("%d ", arr[i]);
     }
 }
 void insertionSort(int* a, int size){
-    for(int i=1; i<size; i++){
-        int k=a[i], j=i-1;
-        while(j >= 0 && k<a[j]){
-            a[j+1]=a[j];
+    for(int i = 1; i < size; i++){
+        int k = a[i], j = i - 1;
+        while(j >= 0 && k < a[j]){
+            a[j + 1] = a[j];
             j--;
         }
-        a[j+1]=k;
+        a[j + 1] = k;
     }
 }

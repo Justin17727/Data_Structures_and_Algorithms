@@ -7,7 +7,7 @@ int* delete_element(int* a, int n, int k);
 void display(int* a, int n);
 int main(){
     int choice, size, b, c, d;
-    int *p=NULL, *k=NULL;
+    int *p = NULL, *k = NULL;
     while(1){
         printf("Enter 1 to create an array.\n");
         printf("Enter 2 to insert an element at any position in array.\n");
@@ -21,7 +21,7 @@ int main(){
                 free(p);
                 printf("Enter size of array: ");
                 scanf("%d", &size);
-                p=create_array(size);
+                p = create_array(size);
                 if(p == NULL){
                     printf("Not able to create array.");
                 }
@@ -36,18 +36,18 @@ int main(){
                     scanf("%d", &c);
                     printf("Enter the position at which the element should be inserted: ");
                     scanf("%d", &d);
-                    if(d>size || d<0){
+                    if(d > size || d < 0){
                         printf("Enter proper position!");
                     }
                     else{
-                        k=insert_element(p, size, d, c);
+                        k = insert_element(p, size, d, c);
                         if(k == NULL){
                             printf("Not able to insert element!");
                         }
                         else{
                             free(p);
-                            p=k;
-                            size+=1;
+                            p = k;
+                            size += 1;
                         }
                     }
                 }
@@ -60,18 +60,18 @@ int main(){
                 else{
                     printf("Enter the element's position to be deleted: ");
                     scanf("%d", &d);
-                    if(d >= size || d<0){
+                    if(d >= size || d < 0){
                         printf("Enter proper position!");
                     }
                     else{
-                        k=delete_element(p, size, d);
+                        k = delete_element(p, size, d);
                         if(k == NULL){
                             printf("Not able to delete element!");
                         }
                         else{
                             free(p);
-                            p=k;
-                            size-=1;
+                            p = k;
+                            size -= 1;
                         }
                     }
                 }
@@ -95,46 +95,46 @@ int main(){
     }
 }
 int* create_array(int n){
-    int* p=(int*)calloc(n, sizeof(int));
-    for(int i=0; i<n; i++){
-        printf("Enter element %d: ", i+1);
-        scanf("%d", p+i);
+    int* p = calloc(n, sizeof(int));
+    for(int i = 0; i < n; i++){
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", p + i);
     }
     return p;
 }
 int* insert_element(int* a, int n, int k, int b){
-    int *p=(int*)calloc(n+1, sizeof(int));
+    int *p = calloc(n + 1, sizeof(int));
     if(p == NULL){
         return NULL;
     }
     else{
-        for(int i=0; i<k; i++){
-            p[i]=a[i];
+        for(int i = 0; i < k; i++){
+            p[i] = a[i];
         }
-        p[k]=b;
-        for(int i=n; i>k; i--){
-            p[i]=a[i-1];
+        p[k] = b;
+        for(int i = n; i > k; i--){
+            p[i] = a[i - 1];
         }
         return p;
     }
 }
 int* delete_element(int* a, int n, int k){
-    int *p=(int*)calloc(n-1, sizeof(int));
+    int *p = calloc(n - 1, sizeof(int));
     if(p == NULL){
         return NULL;
     }
     else{
-        for(int i=0; i<k; i++){
-            p[i]=a[i];
+        for(int i = 0; i < k; i++){
+            p[i] = a[i];
         }
-        for(int i=k; i<n-1; i++){
-            p[i]=a[i+1];
+        for(int i = k; i < n - 1; i++){
+            p[i] = a[i + 1];
         }
         return p;
     }
 }
 void display(int* a, int n){
-    for(int i=0; i<n; i++){
+    for(int i = 0; i < n; i++){
         printf("%d\t", a[i]);
     }
 }
