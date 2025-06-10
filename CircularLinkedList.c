@@ -146,13 +146,13 @@ node* insertBetween(node* head, int data, int index, int* size){
     return head;
 }
 node* insertLast(node* head, int data, int* size){
+    if(head == NULL){
+        return insertFirst(head, data, size);
+    }
     node* K = malloc(sizeof(node));
     if(K == NULL){
         printf("Could not allocate memory for new node!");
         return head;
-    }
-    if(head == NULL){
-        return insertFirst(head, data, size);
     }
     node* ptr = head;
     while(ptr->next != head){
