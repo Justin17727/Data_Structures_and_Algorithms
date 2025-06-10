@@ -129,6 +129,9 @@ node* insertLast(node* head, int data, int* size){
         printf("Could not allocate memory for new node!");
         return head;
     }
+    if(head == NULL){
+        return insertFirst(head, data, size);
+    }
     node* ptr = head;
     while(ptr->next != NULL){
         ptr = ptr->next;
