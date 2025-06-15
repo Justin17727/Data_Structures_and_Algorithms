@@ -2,7 +2,7 @@
 #define MAX 100
 int arr[100];
 void push(int* top, int item);
-int pop(int* top, int item, int* status);
+int pop(int* top, int* status);
 void peek(int top);
 void display(int top);
 int main(){
@@ -22,7 +22,7 @@ int main(){
                 push(&top, data);
                 break;
             case 2:
-                data = pop(&top, data, &popped_element);
+                data = pop(&top, &popped_element);
                 if(popped_element){
                     printf("Removed %d from stack\n", data);
                 }
@@ -48,7 +48,8 @@ void push(int* top, int item){
     }
     arr[++(*top)] = item;
 }
-int pop(int* top, int item, int* status){
+int pop(int* top, int* status){
+    int item = 0;
     if(*top == -1){
         printf("Underflow!\n");
         *status = 0;

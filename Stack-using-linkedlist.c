@@ -5,7 +5,7 @@ typedef struct node{
     struct node* next;
 }node;
 void push(node** top, int data);
-int pop(node** top, int data, int* status);
+int pop(node** top, int* status);
 void peek(node* top);
 void display(node* front);
 int main(){
@@ -26,7 +26,7 @@ int main(){
                 push(&top, data);
                 break;
             case 2:
-                data = pop(&top, data, &popped_element);
+                data = pop(&top, &popped_element);
                 if(popped_element){
                     printf("Removed %d from stack\n", data);
                 }
@@ -55,7 +55,8 @@ void push(node** top, int data){
     K->next = *top;
     *top = K;
 }
-int pop(node** top, int data, int* status){
+int pop(node** top, int* status){
+    int data = 0;
     if(*top == NULL){
         printf("Underflow!\n");
         *status = 0;
