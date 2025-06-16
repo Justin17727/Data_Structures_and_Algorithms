@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-int* merge(int* left, int end1, int* right, int end2);
-int* mergeSort(int* arr, int begin, int end);
+#include <string.h>
+void merge(int* arr1, int begin1, int end1, int begin2, int end2, int* arr2);
+void mergeSort_inf(int* arr1, int begin, int end, int* arr2);
+void mergeSort(int* arr, int size);
 int main(){
     int n;
     printf("Enter the number of elements to be sorted: ");
@@ -11,52 +13,47 @@ int main(){
         printf("Enter element %d: ", i+1);
         scanf("%d", &arr[i]);
     }
-    arr = mergeSort(arr, 0, n - 1);
+    mergeSort(arr, n);
     printf("Sorted array:\n");
     for(int i = 0; i < n; i++){
         printf("%d ", arr[i]);
     }
     free(arr);
 }
-int* merge(int* left, int end1, int* right, int end2){
-    int size = end1 + end2 + 2;
-    int* arr = calloc(size, sizeof(int));
-    for(int i = 0, j = 0, k = 0; k < size; k++){
-        if(i > end1){
-            arr[k] = right[j++];
+void merge(int* arr1, int begin1, int end1, int begin2, int end2, int* arr2){
+    for(int i = begin1, j = begin2, k = begin1; k <= end2; k++){
+        if(j > end2){
+            arr2[k] = arr1[i++];
         }
-        else if(j > end2){
-            arr[k] = left[i++];
+        else if(i > end1){
+            arr2[k] = arr1[j++];
         }
         else{
-            if(left[i] <= right[j]){
-                arr[k] = left[i++];
+            if(arr1[i] <= arr1[j]){
+                arr2[k] = arr1[i++];
             }
             else{
-                arr[k] = right[j++];
+                arr2[k] = arr1[j++];
             }
         }
     }
-    free(right);
-    free(left);
-    return arr;
+    for(int k = begin1; k <= end2; k++){
+        arr1[k] = arr2[k];
+    }
 }
-int* mergeSort(int* arr, int begin, int end){
+void mergeSort_inf(int* arr1, int begin, int end, int* arr2){
     if(begin == end){
-        return arr;
+        arr2[begin] = arr1[begin];
+        return;
     }
     int mid = (end + begin) / 2;
-    int* left = calloc(mid - begin + 1, sizeof(int));
-    for(int i = begin, j = 0; i <= mid; i++, j++){
-        left[j] = arr[i];
-    }
-    int* right = calloc(end - mid, sizeof(int));
-    for(int i = mid + 1, j = 0; i <= end; i++, j++){
-        right[j] = arr[i];
-    }
-    free(arr);
-    end = end - mid - 1;
-    left = mergeSort(left, 0, mid);
-    right = mergeSort(right, 0, end);
-    return merge(left, mid, right, end);
+    mergeSort_inf(arr1, begin, mid, arr2);
+    mergeSort_inf(arr1, mid + 1, end, arr2);
+    merge(arr1, begin, mid, mid + 1, end, arr2);
+}
+void mergeSort(int* arr, int size){
+    int* temp = calloc(size, sizeof(int));
+    memcpy(temp, arr, size * sizeof(int));
+    mergeSort_inf(arr, 0, size - 1, temp);
+    free(temp);
 }
