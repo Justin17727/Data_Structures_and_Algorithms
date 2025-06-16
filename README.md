@@ -69,7 +69,7 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 
 ## 📄 License
 
-This project is licensed under the MIT License --feel free to use and modify for personal or academic use.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) &mdash feel free to use and modify for personal or academic use.
 
 ---
 
