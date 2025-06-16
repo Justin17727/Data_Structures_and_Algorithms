@@ -54,10 +54,23 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/Justin17727/Data_Structures_and_Algorithms.git
-   ```
    cd Data_Structures_and_Algorithms
+   ```
 2. **Compile any file with gcc**
    Example:
    ```bash
-   gcc InsertionSort.c -o insertionsort ./insertionsort
+   gcc InsertionSort.c -o insertionsort
+   ./insertionsort
    ```
+
+   📌 You can use any C compiler like gcc, clang, or an IDE like Code::Blocks or VS Code.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License --feel free to use and modify for personal or academic use.
+
+---
+
+Made with 💖 by [Justin17727](https://github.com/Justin17727)
