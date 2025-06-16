@@ -1,7 +1,9 @@
 # 📘 Data Structures and Algorithms in C
 
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](./LICENSE)
+
 Welcome to my personal repository for practicing and implementing classic *Data Structures and Algorithms* in C.  
-This repo is part of my learning journey as a B.Tech student and helps me strengthen problem-solving skills, prepare for interviews, and revise core CS concepts.
+This repo is part of my learning journey as a B.Tech student and helps me strengthen my problem-solving skills, prepare for interviews, and revise core CS concepts.
 
 ---
 
@@ -10,7 +12,7 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 - [🔧 Data Structures](#-data-structures)
   - [Array](#-array)
   - [Linked List](#-linked-list)
-  - [Binary Search Tree](#-binary-search-tree)
+  - [Binary Tree](#-binary-tree)
 - [⚙ Algorithms](#-algorithms)
   - [Search Algorithms](#-search-algorithms)
   - [Sorting Algorithms](#-sorting-algorithms)
@@ -29,7 +31,7 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 - [Singly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/SinglyLinkedList.c)
 - [Doubly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/DoublyLinkedList.c)
 
-### 🌳 [Binary Tree](#binary-search-tree)
+### 🌳 [Binary Tree](#binary-tree)
 - [Binary Search Tree](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearchTree.c)
 
 ---
