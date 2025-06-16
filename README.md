@@ -8,12 +8,12 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 ## 📚 Table of Contents
 
 - [🔧 Data Structures](#-data-structures)
-  - [Array](#array)
-  - [Linked List](#linked-list)
-  - [Binary Search Tree](#binary-search-tree)
+  - [Array](#-array)
+  - [Linked List](#-linked-list)
+  - [Binary Search Tree](#-binary-search-tree)
 - [⚙ Algorithms](#-algorithms)
-  - [Search Algorithms](#search-algorithms)
-  - [Sorting Algorithms](#sorting-algorithms)
+  - [Search Algorithms](#-search-algorithms)
+  - [Sorting Algorithms](#-sorting-algorithms)
 - [🚀 How to Run](#-how-to-run)
 - [📄 License](#-license)
 
