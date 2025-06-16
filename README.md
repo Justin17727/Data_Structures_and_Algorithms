@@ -21,26 +21,26 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 
 ## 🔧 Data Structures
 
-### 📁 Array
+### 📁 [Array](#array)
 - [Static Array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/StaticArray.c)
 - [Dynamic Array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/DynamicArray.c)
 
-### 🔗 Linked List
+### 🔗 [Linked List](#-linked-list)
 - [Singly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/SinglyLinkedList.c)
 - [Doubly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/DoublyLinkedList.c)
 
-### 🌳 Binary Tree
+### 🌳 [Binary Tree](#binary-search-tree)
 - [Binary Search Tree](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearchTree.c)
 
 ---
 
 ## ⚙ Algorithms
 
-### 🔍 Search Algorithms
+### 🔍 [Search Algorithms](#search-algorithms)
 - [Linear Search](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/LinearSearch.c)
 - [Binary Search](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearch.c)
 
-### 🔃 Sorting Algorithms
+### 🔃 [Sorting Algorithms](#sorting-algorithms)
 - [Insertion Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/InsertionSort.c)
 - [Heap Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/HeapSort.c)
 - [Bubble Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BubbleSort.c)
@@ -69,7 +69,7 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 
 ## 📄 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) &mdash feel free to use and modify for personal or academic use.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — feel free to use and modify for personal or academic use.
 
 ---
 
