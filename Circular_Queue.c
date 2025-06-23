@@ -2,9 +2,9 @@
 #define MAX 5
 int arr[5];
 void enqueue(int* front, int* rear, int item);
-int dequeue(int* top, int* rear, int* status);
+int dequeue(int* front, int* rear, int* status);
 void peek(int front, int rear);
-void display(int top, int rear);
+void display(int front, int rear);
 int main(){
     int ch, data, dequeued_element = 0, front = -1, rear = -1;
     while(1){
