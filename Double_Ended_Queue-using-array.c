@@ -108,7 +108,7 @@ int deleteRear(int* front, int* rear, int* status){
         *rear = -1;
     }
     else{
-        *rear = ((*front) + MAX - 1) % MAX;
+        *rear = ((*rear) + MAX - 1) % MAX;
     }
     *status = 1;
     return item;
