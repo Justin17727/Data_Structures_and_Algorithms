@@ -159,7 +159,7 @@ node* insertBetween(node* head, int data, int index, int* size){
     return head;
 }
 node* insertLast(node* head, int data, int* size){
-    if(head == NULL || head->next == head){
+    if(head == NULL){
         return insertFirst(head, data, size);
     }
     node* K = malloc(sizeof(node));
@@ -194,7 +194,7 @@ node* deleteBetween(node* head, int index, int* size){
     if(index == (*size) - 1){
         return deleteLast(head, size);
     }
-    node *ptr = head, *ptr2 = NULL;
+    node *ptr = head;
     for(int i = 0; i < index; i++){
         ptr = ptr->next;
     }
