@@ -13,6 +13,8 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
   - [Array](#-array)
   - [Linked List](#-linked-list)
   - [Binary Tree](#-binary-tree)
+  - [Stack](#️-stack)
+  - [Queue](#-queue)
 - [⚙ Algorithms](#-algorithms)
   - [Search Algorithms](#-search-algorithms)
   - [Sorting Algorithms](#-sorting-algorithms)
@@ -23,26 +25,39 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 
 ## 🔧 Data Structures
 
-### 📁 [Array](#array)
+### 📁 [Array]
 - [Static Array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/StaticArray.c)
 - [Dynamic Array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/DynamicArray.c)
 
-### 🔗 [Linked List](#-linked-list)
+### 🔗 [Linked List]
 - [Singly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/SinglyLinkedList.c)
 - [Doubly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/DoublyLinkedList.c)
+- [Circular Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/CircularLinkedList.c)
+- [Circular Doubly Linked List](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/CircularDoublyLinkedList.c)
 
-### 🌳 [Binary Tree](#binary-tree)
+### 🌳 [Binary Tree]
 - [Binary Search Tree](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearchTree.c)
+
+### ↕️ [Stack]
+- [Stack using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Stack-using-array.c)
+- [Stack using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Stack-using-linkedlist.c)
+
+### ⏩ [Queue]
+- [Queue using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Simple_Linear_Queue-using-array.c)
+- [Circular Queue](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Circular_Queue.c)
+- [Queue using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Queue-using-linkedlist.c)
+- [Deque using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Double_Ended_Queue-using-array.c)
+- [Deque using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Double_Ended_Queue-using-linkedlist.c)
 
 ---
 
 ## ⚙ Algorithms
 
-### 🔍 [Search Algorithms](#search-algorithms)
+### 🔍 [Search Algorithms]
 - [Linear Search](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/LinearSearch.c)
 - [Binary Search](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearch.c)
 
-### 🔃 [Sorting Algorithms](#sorting-algorithms)
+### 🔃 [Sorting Algorithms]
 - [Insertion Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/InsertionSort.c)
 - [Heap Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/HeapSort.c)
 - [Bubble Sort](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BubbleSort.c)
