@@ -29,7 +29,7 @@ int main(){
                 }
                 break;
             case 3:
-                data = findMax(heap, &elements, &status);
+                data = findMax(heap, elements, &status);
                 if(status){
                     printf("Max element: %d\n", data);
                 }
