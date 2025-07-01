@@ -10,8 +10,8 @@ int dequeue(priority_queue* arr, int* size, int* status);
 int peek(priority_queue* arr, int size, int* status);
 void display(priority_queue* arr, int size);
 int main(){
-    int ch, data, prior, dequeued_element = 0, size = 0;
-    priority_queue pq[10];
+    int ch, data, prior, success = 0, size = 0;
+    priority_queue pq[MAX];
     while(1){
         printf("Enter 1 to enqueue\n");
         printf("Enter 2 to dequeue\n");
@@ -29,14 +29,14 @@ int main(){
                 enqueue(pq, data, prior, &size);
                 break;
             case 2:
-                data = dequeue(pq, &size, &dequeued_element);
-                if(dequeued_element){
+                data = dequeue(pq, &size, &success);
+                if(success){
                     printf("Removed %d from queue\n", data);
                 }
                 break;
             case 3:
-                data = peek(pq, size, &dequeued_element);
-                if(dequeued_element){
+                data = peek(pq, size, &success);
+                if(success){
                     printf("Peeked element: %d\n", data);
                 }
                 break;
@@ -46,7 +46,7 @@ int main(){
             case 5:
                 return 0;
             default:
-                printf("Invalid choice.");
+                printf("Invalid choice.\n");
         }
         printf("\n");
     }
