@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-void minHeapify(int* arr, int node);
+void minHeapifyUp(int* arr, int node);
 int* insert(int* arr, int data, int* elements, int* size);
 int extractMin(int* arr, int* size, int* status);
 int findMin(int* arr, int size, int* status);
@@ -46,7 +46,7 @@ int main(){
         printf("\n");
     }
 }
-void minHeapify(int* arr, int node){
+void minHeapifyUp(int* arr, int node){
     int temp = arr[node];
     for(int i = node; i > 0; i = (i - 1) / 2){
         if(arr[(i - 1) / 2] > arr[i]){
@@ -79,7 +79,7 @@ int* insert(int* arr, int data, int* elements, int* size){
     }
     arr[*elements] = data;
     (*elements)++;
-    minHeapify(arr, (*elements) - 1);
+    minHeapifyUp(arr, (*elements) - 1);
     return arr;
 }
 int extractMin(int* arr, int* size, int* status){
@@ -96,32 +96,26 @@ int extractMin(int* arr, int* size, int* status){
         return value;
     }
     arr[0] = arr[*size - 1];
-    arr[*size - 1] = value;
     *size -= 1;
     int temp = arr[0], i = 0;;
     while(i < *size){
-        int b = 2 * i + 1;
-        if(b >= *size){
-            break;
+        int smallest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if(left < *size && arr[left] < arr[smallest]){
+            smallest = left;
         }
-        else if(b + 1 >= *size){
-            if(arr[i] > arr[b]){
-                arr[i] = arr[b];
-                arr[b] = temp;
-            }
-            break;
+        if(right < *size && arr[right] < arr[smallest]){
+            smallest = right;
+        }
+        if(smallest != i && arr[smallest] < arr[i]){
+            arr[i] = arr[smallest];
+            arr[smallest] = temp;
         }
         else{
-            b = (arr[b] < arr[b + 1]) ? b : b + 1;
-            if(arr[i] > arr[b]){
-                arr[i] = arr[b];
-                arr[b] = temp;
-                i = b;
-            }
-            else{
-                break;
-            }
+            break;
         }
+        i = smallest;
     }
     return value;
 }
