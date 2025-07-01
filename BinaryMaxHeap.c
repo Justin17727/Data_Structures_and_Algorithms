@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-void maxHeapify(int* arr, int node);
+void maxHeapifyUp(int* arr, int node);
 int* insert(int* arr, int data, int* elements, int* size);
 int extractMax(int* arr, int* size, int* status);
 int findMax(int* arr, int size, int* status);
@@ -46,7 +46,7 @@ int main(){
         printf("\n");
     }
 }
-void maxHeapify(int* arr, int node){
+void maxHeapifyUp(int* arr, int node){
     int temp = arr[node];
     for(int i = node; i > 0; i = (i - 1) / 2){
         if(arr[(i - 1) / 2] < arr[i]){
@@ -79,7 +79,7 @@ int* insert(int* arr, int data, int* elements, int* size){
     }
     arr[*elements] = data;
     (*elements)++;
-    maxHeapify(arr, (*elements) - 1);
+    maxHeapifyUp(arr, (*elements) - 1);
     return arr;
 }
 int extractMax(int* arr, int* size, int* status){
@@ -96,32 +96,26 @@ int extractMax(int* arr, int* size, int* status){
         return value;
     }
     arr[0] = arr[*size - 1];
-    arr[*size - 1] = value;
     *size -= 1;
     int temp = arr[0], i = 0;;
     while(i < *size){
-        int b = 2 * i + 1;
-        if(b >= *size){
-            break;
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if(left < *size && arr[left] > arr[largest]){
+            largest = left;
         }
-        else if(b + 1 >= *size){
-            if(arr[i] < arr[b]){
-                arr[i] = arr[b];
-                arr[b] = temp;
-            }
-            break;
+        if(right < *size && arr[right] > arr[largest]){
+            largest = right;
+        }
+        if(largest != i && arr[largest] > arr[i]){
+            arr[i] = arr[largest];
+            arr[largest] = temp;
         }
         else{
-            b = (arr[b] > arr[b + 1]) ? b : b + 1;
-            if(arr[i] < arr[b]){
-                arr[i] = arr[b];
-                arr[b] = temp;
-                i = b;
-            }
-            else{
-                break;
-            }
+            break;
         }
+        i = largest;
     }
     return value;
 }
