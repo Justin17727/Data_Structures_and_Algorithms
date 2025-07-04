@@ -60,6 +60,7 @@ void enqueue(priority_queue** head, int data, int priority){
     K->val = data;
     K->priority = priority;
     if(*head == NULL){
+        K->next = NULL;
         *head = K;
         return;
     }
