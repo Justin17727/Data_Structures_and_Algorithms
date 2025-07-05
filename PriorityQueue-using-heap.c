@@ -61,7 +61,6 @@ void maxHeapifyUp(priority_queue* arr, int node){
     }
 }
 void enqueue(priority_queue* arr, int data, int priority, int* size){
-    int* temp;
     if(*size == MAX){
         printf("Overflow!\n");
         return;
@@ -91,28 +90,23 @@ int dequeue(priority_queue* arr, int* size, int* status){
     temp = arr[0];
     int i = 0;
     while(i < *size){
-        int b = 2 * i + 1;
-        if(b >= *size){
-            break;
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if(left < *size && arr[left].priority > arr[largest].priority){
+            largest = left;
         }
-        else if(b + 1 >= *size){
-            if(arr[i].priority < arr[b].priority){
-                arr[i] = arr[b];
-                arr[b] = temp;
-            }
-            break;
+        if(right < *size && arr[right].priority > arr[largest].priority){
+            largest = right;
+        }
+        if(largest != i && arr[largest].priority > arr[i].priority){
+            arr[i] = arr[largest];
+            arr[largest] = temp;
         }
         else{
-            b = (arr[b].priority > arr[b + 1].priority) ? b : b + 1;
-            if(arr[i].priority < arr[b].priority){
-                arr[i] = arr[b];
-                arr[b] = temp;
-                i = b;
-            }
-            else{
-                break;
-            }
+            break;
         }
+        i = largest;
     }
     return value;
 }
