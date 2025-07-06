@@ -13,6 +13,7 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
   - [Array](#-array)
   - [Linked List](#-linked-list)
   - [Binary Tree](#-binary-tree)
+  - [Heap](#-heap)
   - [Stack](#️-stack)
   - [Queue](#-queue)
 - [⚙ Algorithms](#-algorithms)
@@ -38,6 +39,10 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 ### 🌳 [Binary Tree]
 - [Binary Search Tree](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinarySearchTree.c)
 
+### 🪆 [Heap]
+- [Binary Max Heap](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinaryMaxHeap.c)
+- [Binary Min Heap](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/BinaryMinHeap.c)
+
 ### ↕️ [Stack]
 - [Stack using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Stack-using-array.c)
 - [Stack using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Stack-using-linkedlist.c)
@@ -48,6 +53,9 @@ This repo is part of my learning journey as a B.Tech student and helps me streng
 - [Queue using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Queue-using-linkedlist.c)
 - [Deque using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Double_Ended_Queue-using-array.c)
 - [Deque using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/Double_Ended_Queue-using-linkedlist.c)
+- [Priority Queue using array](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/PriorityQueue-using-array.c)
+- [Priority Queue using linked list](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/PriorityQueue-using-linkedlist.c)
+- [Priority Queue using heap](https://github.com/Justin17727/Data_Structures_and_Algorithms/blob/main/PriorityQueue-using-heap.c)
 
 ---
 
