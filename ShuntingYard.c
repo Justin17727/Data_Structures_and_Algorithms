@@ -48,6 +48,31 @@ int priority(char x){
     }
 }
 
+// validate input from user
+void str_input(char* inp, int size_of_buffer){
+
+    printf("Enter the expression : ");
+    fgets(inp, size_of_buffer, stdin);
+
+    // remove '\n' from string buffer
+    for(int i = 0; i < size_of_buffer; i++){
+        if(inp[i] == '\n'){
+            inp[i] = '\0';
+            break;
+        }
+
+        // if input too long, '\n' not taken in buffer
+        if(i == size_of_buffer - 1){
+            printf("Entered expression too long!\n");
+            printf("Exiting the program.\n");
+            exit(2);
+        }
+
+        // validate parantheses opening and closing
+        
+    }
+}
+
 int main(){
     
     char exp[100];  // buffer for input expression
@@ -55,31 +80,16 @@ int main(){
     char x;         // popped symbol from stack
     
     // input from user
-    printf("Enter the expression : ");
-    fgets(exp, 100, stdin);
-
-    // remove '\n' from string buffer
-    for(int i = 0; i < 100; i++){
-        if(exp[i] == '\n'){
-            exp[i] = '\0';
-            break;
-        }
-
-        // if input too long, '\n' not taken in buffer
-        if(i == 99){
-            printf("Entered expression too long!\n");
-            printf("Exiting the program.\n");
-            exit(2);
-        }
-    }
+    str_input(exp, 100);
     
     e = exp;  // initialise pointer 'e' from start address of 'exp'
 
     // while not reached the end of string buffer
     while(*e != '\0'){
+        
         // ignore whitespace character
         if(*e == ' '){
-            *e++;  // increment pointer to point to nect character in string buffer
+            e++;  // increment pointer to point to nect character in string buffer
             continue;
         }
 
