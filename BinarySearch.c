@@ -33,9 +33,9 @@ int main(){
 // search a key in given array of given size, return key's index
 int binarySearch(int* arr, int key, int size){
 
-    int low = 0;  // lower bound (index) to be considered
+    int low = 0;          // lower bound (index) to be considered
     int high = size - 1;  // upper bound (index) to be considered
-    int mid;  // element's index in question being key or not
+    int mid;              // element's index in question being key or not
 
     // lower bound should always be lesser or equal to upper bound
     while(low <= high){
@@ -75,8 +75,8 @@ int compare(const void* a, const void* b){
     }
 
     if(*x > *y){
-        return 1;  // signifying x should come before y
+        return 1;   // signifying x should come before y
     }
 
-    return 0;  // signifying x and y are equal for sorting
+    return 0;       // signifying x and y are equal for sorting
 }

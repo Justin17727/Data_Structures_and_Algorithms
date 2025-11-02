@@ -9,11 +9,11 @@ void display(int* arr, int size);
 
 int main(){
     
-    int data;  // data to insert
+    int data;                    // data to insert
     int elements = 0, size = 0;  // array parameters, number of elements in it, and maximum it can have currently
-    int choice;  // to indicate user's choice with given options
-    int status = 0;  // flag to indicate a success/failure of an operation
-    int* heap = NULL;  // pointer to array (heap) memory segment
+    int choice;                  // to indicate user's choice with given options
+    int status = 0;              // flag to indicate a success/failure of an operation
+    int* heap = NULL;            // pointer to array (heap) memory segment
     
     while(1){
         printf("Enter 1 to insert an element.\n");
@@ -126,7 +126,7 @@ int* insert(int* arr, int data, int* elements, int* size){
     return arr;
 }
 
-// 
+// extract max value from array (heap)
 int extractMax(int* arr, int* size, int* status){
     int value = 0;
 
@@ -162,8 +162,8 @@ int extractMax(int* arr, int* size, int* status){
     while(i < *size){
 
         // the root node is smallest, so assuming it as largest
-        int largest = i;  // largest value's index
-        int left = 2 * i + 1;  // left child index
+        int largest = i;        // largest value's index
+        int left = 2 * i + 1;   // left child index
         int right = 2 * i + 2;  // right child index
 
         // if left child exists and is greater than current largest index value
