@@ -341,7 +341,7 @@ node* deleteLast(node* head, int* size){
     return head;
 }
 
-// 
+// display node memory locations with values while traversing frontward (next pointer)
 void display_front_loop(node* head, int count){
     
     // if linked list is empty
@@ -367,6 +367,7 @@ void display_front_loop(node* head, int count){
     }
 }
 
+// display node memory locations with values while traversing backward (prev pointer)
 void display_back_loop(node* head, int count){
     
     // if linked list is empty
