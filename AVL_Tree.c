@@ -14,7 +14,7 @@ int height(node* root);
 int balanceFactor(node* root);
 node* rightRotate(node* root);
 node* leftRotate(node* root);
-node* rotate(node* root);
+node* balance(node* root);
 node* insert(node* root, int data);
 node* findMin(node* root);
 node* delete(node* root, int data);
@@ -36,8 +36,7 @@ int main(){
         printf("Enter 5 to display preorder traversal\n");
         printf("Enter 6 to display level order traversal\n");
         printf("Enter 7 to exit\n");
-        
-        printf("Height: %d\n", height(root));
+
         printf("Enter your choice: ");
         scanf("%d", &ch);
         
@@ -98,11 +97,55 @@ int balanceFactor(node* root){
 }
 
 
-node* rightRotate(node* root){}
+node* rightRotate(node* root){
+    node* child = root->left;
+    root->left = child->right;
+    child->right = root;
 
-node* leftRotate(node* root){}
+    root->height = 1 + get_max(height(root->left), height(root->right));
+    child->height = 1 + get_max(height(child->left), height(child->right));
 
-node* rotate(node* root){}
+    return child;
+}
+
+node* leftRotate(node* root){
+    node* child = root->right;
+    root->right = child->left;
+    child->left = root;
+
+    root->height = 1 + get_max(height(root->left), height(root->right));
+    child->height = 1 + get_max(height(child->left), height(child->right));
+
+    return child;
+}
+
+node* balance(node* root){
+
+    int balance = balanceFactor(root);
+    if(abs(balance) > 1){
+        if(balance > 0){
+            if(balanceFactor(root->left) >= 0){
+                return rightRotate(root);
+            }
+            else{
+                root->left = leftRotate(root->left);
+                return rightRotate(root);
+            }
+        }
+        else{
+            if(balanceFactor(root->right) <= 0){
+                return leftRotate(root);
+            }
+            else{
+                root->right = rightRotate(root->right);
+                return leftRotate(root);
+            }
+        }
+    }
+    else{
+        return root;
+    }
+}
 
 node* insert(node* root, int data){
 
@@ -137,26 +180,7 @@ node* insert(node* root, int data){
 
     root->height = 1 + get_max(height(root->left), height(root->right));
 
-    int balance = balanceFactor(root);
-    if(abs(balance) > 1){
-        if(balance > 0){
-            if(balanceFactor(root->left) >= 0){
-                printf("LL case\n");
-            }
-            else{
-                printf("LR case\n");
-            }
-        }
-        else{
-            if(balanceFactor(root->right) <= 0){
-                printf("RR case\n");
-            }
-            else{
-                printf("RL case\n");
-            }
-        }
-    }
-    return root;
+    return balance(root);
 }
 
 node* findMin(node* root){
@@ -210,7 +234,9 @@ node* delete(node* root, int data){
         }
     }
 
-    return root;
+    root->height = 1 + get_max(height(root->left), height(root->right));
+
+    return balance(root);
 }
 
 void postorderTraversal(node* root, int isFirst){
